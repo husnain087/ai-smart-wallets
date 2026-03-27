@@ -64,6 +64,7 @@ const DashboardLayout = () => {
       <main className="flex-1 p-4 md:p-6 overflow-auto mt-14 md:mt-0 min-w-0">
         <Outlet />
       </main>
+      <AiAssistant />
     </div>
   );
 };
