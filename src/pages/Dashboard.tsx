@@ -302,9 +302,9 @@ const Dashboard = () => {
                 </div>
               </div>
               <div>
-                <p className="text-sm opacity-70 mb-1">Virtual Balance</p>
+              <p className="text-sm opacity-70 mb-1">Available Balance</p>
                 <p className="text-4xl font-extrabold tracking-tight">
-                  {showBalance ? "Rs. 45,200" : "Rs. •••••••"}
+                  {showBalance ? "Rs. 128,450" : "Rs. •••••••"}
                 </p>
               </div>
               <div className="flex items-end justify-between">
