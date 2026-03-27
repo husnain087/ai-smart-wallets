@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { LayoutDashboard, ArrowLeftRight, Receipt, PiggyBank, BarChart3, User, Menu, X } from "lucide-react";
+import AiAssistant from "./AiAssistant";
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard },
@@ -63,6 +64,7 @@ const DashboardLayout = () => {
       <main className="flex-1 p-4 md:p-6 overflow-auto mt-14 md:mt-0 min-w-0">
         <Outlet />
       </main>
+      <AiAssistant />
     </div>
   );
 };
