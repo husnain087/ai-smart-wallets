@@ -10,11 +10,11 @@ const monthlyData = [
 ];
 
 const categoryData = [
-  { name: "Food", value: 12000, color: "hsl(228, 89%, 55%)" },
-  { name: "Transport", value: 5000, color: "hsl(142, 71%, 45%)" },
-  { name: "Bills", value: 15000, color: "hsl(38, 92%, 50%)" },
-  { name: "Shopping", value: 8000, color: "hsl(0, 84%, 60%)" },
-  { name: "Other", value: 2000, color: "hsl(220, 9%, 46%)" },
+  { name: "Food", value: 12000, color: "hsl(262, 83%, 58%)" },
+  { name: "Transport", value: 5000, color: "hsl(280, 72%, 55%)" },
+  { name: "Bills", value: 15000, color: "hsl(300, 65%, 50%)" },
+  { name: "Shopping", value: 8000, color: "hsl(240, 60%, 55%)" },
+  { name: "Other", value: 2000, color: "hsl(260, 15%, 70%)" },
 ];
 
 const balanceTrend = [
