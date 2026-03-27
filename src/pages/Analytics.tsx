@@ -104,7 +104,7 @@ const Analytics = () => {
             <XAxis dataKey="day" tick={{ fontSize: 12 }} />
             <YAxis tick={{ fontSize: 12 }} />
             <Tooltip />
-            <Line type="monotone" dataKey="balance" stroke="hsl(228, 89%, 55%)" strokeWidth={2.5} dot={{ fill: "hsl(228, 89%, 55%)" }} />
+            <Line type="monotone" dataKey="balance" stroke="hsl(262, 83%, 58%)" strokeWidth={2.5} dot={{ fill: "hsl(262, 83%, 58%)" }} />
           </LineChart>
         </ResponsiveContainer>
       </div>
