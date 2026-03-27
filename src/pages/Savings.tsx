@@ -112,8 +112,8 @@ const Savings = () => {
                 </div>
                 <span className="text-primary font-bold">{percent}%</span>
               </div>
-              <div className="h-2.5 bg-muted rounded-full overflow-hidden mb-3">
-                <div className="h-full bg-primary rounded-full transition-all" style={{ width: `${percent}%` }} />
+                <div className="h-2.5 bg-muted rounded-full overflow-hidden mb-3">
+                  <div className="h-full gradient-primary rounded-full transition-all" style={{ width: `${percent}%` }} />
               </div>
               {percent < 100 && (
                 <button

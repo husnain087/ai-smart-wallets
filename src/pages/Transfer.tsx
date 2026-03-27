@@ -65,7 +65,7 @@ const Transfer = () => {
             </div>
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+              className="w-full py-3 rounded-xl gradient-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
             >
               Send Money
             </button>
