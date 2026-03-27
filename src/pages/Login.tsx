@@ -94,7 +94,7 @@ const Login = () => {
         <div className="w-full max-w-md">
           <div className="bg-card rounded-2xl border border-border p-8 shadow-lg">
             <div className="flex items-center gap-3 mb-8 justify-center">
-              <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl gradient-primary text-primary-foreground flex items-center justify-center">
                 <Wallet size={24} />
               </div>
               <h1 className="text-2xl font-bold">SmartWallet AI</h1>
@@ -158,7 +158,7 @@ const Login = () => {
       <div className="w-full max-w-md">
         <div className="bg-card rounded-2xl border border-border p-8 shadow-lg">
           <div className="flex items-center gap-3 mb-8 justify-center">
-            <div className="w-12 h-12 rounded-xl bg-primary text-primary-foreground flex items-center justify-center">
+            <div className="w-12 h-12 rounded-xl gradient-primary text-primary-foreground flex items-center justify-center">
               <Wallet size={24} />
             </div>
             <h1 className="text-2xl font-bold">SmartWallet AI</h1>
