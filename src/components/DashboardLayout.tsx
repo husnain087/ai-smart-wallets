@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { LayoutDashboard, ArrowLeftRight, Receipt, PiggyBank, BarChart3, User, Menu, X } from "lucide-react";
+import AiAssistant from "./AiAssistant";
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard },
