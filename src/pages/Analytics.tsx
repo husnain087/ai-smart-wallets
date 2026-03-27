@@ -10,11 +10,11 @@ const monthlyData = [
 ];
 
 const categoryData = [
-  { name: "Food", value: 12000, color: "hsl(228, 89%, 55%)" },
-  { name: "Transport", value: 5000, color: "hsl(142, 71%, 45%)" },
-  { name: "Bills", value: 15000, color: "hsl(38, 92%, 50%)" },
-  { name: "Shopping", value: 8000, color: "hsl(0, 84%, 60%)" },
-  { name: "Other", value: 2000, color: "hsl(220, 9%, 46%)" },
+  { name: "Food", value: 12000, color: "hsl(262, 83%, 58%)" },
+  { name: "Transport", value: 5000, color: "hsl(280, 72%, 55%)" },
+  { name: "Bills", value: 15000, color: "hsl(300, 65%, 50%)" },
+  { name: "Shopping", value: 8000, color: "hsl(240, 60%, 55%)" },
+  { name: "Other", value: 2000, color: "hsl(260, 15%, 70%)" },
 ];
 
 const balanceTrend = [
@@ -62,8 +62,8 @@ const Analytics = () => {
               <XAxis dataKey="month" tick={{ fontSize: 12 }} />
               <YAxis tick={{ fontSize: 12 }} />
               <Tooltip />
-              <Bar dataKey="income" fill="hsl(228, 89%, 55%)" radius={[6, 6, 0, 0]} />
-              <Bar dataKey="expense" fill="hsl(220, 14%, 80%)" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="income" fill="hsl(262, 83%, 58%)" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="expense" fill="hsl(260, 15%, 78%)" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -104,7 +104,7 @@ const Analytics = () => {
             <XAxis dataKey="day" tick={{ fontSize: 12 }} />
             <YAxis tick={{ fontSize: 12 }} />
             <Tooltip />
-            <Line type="monotone" dataKey="balance" stroke="hsl(228, 89%, 55%)" strokeWidth={2.5} dot={{ fill: "hsl(228, 89%, 55%)" }} />
+            <Line type="monotone" dataKey="balance" stroke="hsl(262, 83%, 58%)" strokeWidth={2.5} dot={{ fill: "hsl(262, 83%, 58%)" }} />
           </LineChart>
         </ResponsiveContainer>
       </div>

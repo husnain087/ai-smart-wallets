@@ -25,7 +25,7 @@ const DashboardLayout = () => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                   isActive
-                    ? "bg-sidebar-active text-sidebar-active-fg"
+                    ? "gradient-primary text-sidebar-active-fg"
                     : "text-sidebar-fg hover:text-sidebar-active-fg"
                 }`
               }

@@ -12,13 +12,20 @@ const savingsGoals = [
   { name: "Semester Fee", percent: 83 },
 ];
 
+const quickActions = [
+  { label: "Send Money", Icon: ArrowUpRight },
+  { label: "Receive", Icon: ArrowDownLeft },
+  { label: "Pay Bills", Icon: Receipt },
+  { label: "QR Pay", Icon: QrCode },
+];
+
 const Dashboard = () => {
   return (
     <div className="space-y-6">
       {/* Top row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Wallet Balance */}
-        <div className="bg-primary text-primary-foreground rounded-2xl p-6">
+        <div className="gradient-hero text-primary-foreground rounded-2xl p-6">
           <p className="text-sm opacity-80">Wallet Balance</p>
           <p className="text-4xl font-bold mt-2">Rs. 128,450</p>
           <p className="text-sm mt-3 opacity-70">**** 4589 • Active</p>
@@ -28,18 +35,15 @@ const Dashboard = () => {
         <div className="bg-card rounded-2xl p-6 border border-border">
           <h3 className="font-bold text-lg mb-4">Quick Actions</h3>
           <div className="grid grid-cols-2 gap-3">
-            {[
-              { label: "Send Money", icon: ArrowUpRight },
-              { label: "Receive", icon: ArrowDownLeft },
-              { label: "Pay Bills", icon: Receipt },
-              { label: "QR Pay", icon: QrCode },
-            ].map((action) => (
+            {quickActions.map((action) => (
               <button
                 key={action.label}
-                className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border border-border text-xs font-medium hover:bg-muted transition-colors whitespace-nowrap overflow-hidden"
+                className="flex flex-col items-center gap-2 px-3 py-4 rounded-xl border border-border text-xs font-medium hover:bg-secondary transition-colors"
               >
-                <action.icon size={16} />
-                {action.label}
+                <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center text-primary-foreground">
+                  <action.Icon size={18} />
+                </div>
+                <span>{action.label}</span>
               </button>
             ))}
           </div>
@@ -104,7 +108,7 @@ const Dashboard = () => {
                 </div>
                 <div className="h-2 bg-muted rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-primary rounded-full transition-all"
+                    className="h-full gradient-primary rounded-full transition-all"
                     style={{ width: `${goal.percent}%` }}
                   />
                 </div>
