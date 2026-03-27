@@ -4,7 +4,7 @@ import { LayoutDashboard, ArrowLeftRight, Receipt, PiggyBank, BarChart3, User, M
 import AiAssistant from "./AiAssistant";
 
 const navItems = [
-  { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/", label: "Dashboard", icon: LayoutDashboard },
   { to: "/transfer", label: "Transfer", icon: ArrowLeftRight },
   { to: "/bills", label: "Bills", icon: Receipt },
   { to: "/savings", label: "Savings", icon: PiggyBank },
