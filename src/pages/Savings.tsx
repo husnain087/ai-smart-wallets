@@ -49,7 +49,7 @@ const Savings = () => {
 
       {/* Summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-primary text-primary-foreground rounded-2xl p-6">
+        <div className="gradient-hero text-primary-foreground rounded-2xl p-6">
           <p className="text-sm opacity-80">Total Savings</p>
           <p className="text-3xl font-bold mt-1">Rs. {totalSaved.toLocaleString()}</p>
         </div>
@@ -112,8 +112,8 @@ const Savings = () => {
                 </div>
                 <span className="text-primary font-bold">{percent}%</span>
               </div>
-              <div className="h-2.5 bg-muted rounded-full overflow-hidden mb-3">
-                <div className="h-full bg-primary rounded-full transition-all" style={{ width: `${percent}%` }} />
+                <div className="h-2.5 bg-muted rounded-full overflow-hidden mb-3">
+                  <div className="h-full gradient-primary rounded-full transition-all" style={{ width: `${percent}%` }} />
               </div>
               {percent < 100 && (
                 <button
