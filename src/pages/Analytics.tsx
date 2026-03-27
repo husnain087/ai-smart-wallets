@@ -62,8 +62,8 @@ const Analytics = () => {
               <XAxis dataKey="month" tick={{ fontSize: 12 }} />
               <YAxis tick={{ fontSize: 12 }} />
               <Tooltip />
-              <Bar dataKey="income" fill="hsl(228, 89%, 55%)" radius={[6, 6, 0, 0]} />
-              <Bar dataKey="expense" fill="hsl(220, 14%, 80%)" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="income" fill="hsl(262, 83%, 58%)" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="expense" fill="hsl(260, 15%, 78%)" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
