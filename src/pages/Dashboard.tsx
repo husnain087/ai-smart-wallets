@@ -1,4 +1,5 @@
-import { ArrowUpRight, ArrowDownLeft, Receipt, QrCode } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, ArrowDownLeft, Receipt, QrCode, CreditCard, Smartphone, Wifi, Eye, EyeOff, Copy, MoreVertical } from "lucide-react";
 
 const transactions = [
   { name: "Ahmed Khan", type: "Sent", amount: "- Rs. 2,500", status: "Completed" },
@@ -20,30 +21,144 @@ const quickActions = [
 ];
 
 const Dashboard = () => {
+  const [activeCard, setActiveCard] = useState<"physical" | "virtual">("physical");
+  const [showBalance, setShowBalance] = useState(true);
+
   return (
     <div className="space-y-6">
-      {/* Top row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Wallet Balance */}
-        <div className="gradient-hero text-primary-foreground rounded-2xl p-8 flex flex-col justify-between min-h-[200px]">
-          <p className="text-sm opacity-80">Wallet Balance</p>
-          <p className="text-5xl font-extrabold mt-2">Rs. 128,450</p>
-          <p className="text-sm mt-3 opacity-70">**** 4589 • Active</p>
+      {/* Wallet & Cards Row */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Card Section */}
+        <div className="lg:col-span-2 space-y-4">
+          {/* Card Type Tabs */}
+          <div className="flex gap-2">
+            <button
+              onClick={() => setActiveCard("physical")}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                activeCard === "physical"
+                  ? "gradient-primary text-primary-foreground shadow-lg"
+                  : "bg-card border border-border text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <CreditCard size={16} />
+              Physical Card
+            </button>
+            <button
+              onClick={() => setActiveCard("virtual")}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                activeCard === "virtual"
+                  ? "gradient-primary text-primary-foreground shadow-lg"
+                  : "bg-card border border-border text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Smartphone size={16} />
+              Virtual Card
+            </button>
+          </div>
+
+          {/* Card Display */}
+          {activeCard === "physical" ? (
+            <div className="gradient-hero rounded-2xl p-8 text-primary-foreground relative overflow-hidden min-h-[220px] flex flex-col justify-between">
+              {/* Card chip & contactless */}
+              <div className="flex items-start justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-7 rounded bg-primary-foreground/20 border border-primary-foreground/30" />
+                  <Wifi size={20} className="opacity-60 rotate-90" />
+                </div>
+                <div className="flex items-center gap-2">
+                  <button onClick={() => setShowBalance(!showBalance)} className="opacity-70 hover:opacity-100 transition-opacity">
+                    {showBalance ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
+                  <button className="opacity-70 hover:opacity-100 transition-opacity">
+                    <MoreVertical size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Balance */}
+              <div>
+                <p className="text-sm opacity-70 mb-1">Available Balance</p>
+                <p className="text-4xl font-extrabold tracking-tight">
+                  {showBalance ? "Rs. 128,450" : "Rs. •••••••"}
+                </p>
+              </div>
+
+              {/* Card details */}
+              <div className="flex items-end justify-between">
+                <div>
+                  <p className="text-xs opacity-60 mb-1">Card Number</p>
+                  <p className="text-sm font-medium tracking-widest">4589 •••• •••• 7821</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs opacity-60 mb-1">Expires</p>
+                  <p className="text-sm font-medium">09/28</p>
+                </div>
+              </div>
+
+              {/* Decorative circles */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary-foreground/5" />
+              <div className="absolute -bottom-8 -right-4 w-28 h-28 rounded-full bg-primary-foreground/5" />
+            </div>
+          ) : (
+            <div className="relative rounded-2xl p-8 text-primary-foreground min-h-[220px] flex flex-col justify-between overflow-hidden"
+              style={{ background: "linear-gradient(135deg, hsl(280, 72%, 55%), hsl(320, 70%, 50%))" }}
+            >
+              {/* Header */}
+              <div className="flex items-start justify-between">
+                <div className="flex items-center gap-2">
+                  <Smartphone size={20} className="opacity-80" />
+                  <span className="text-sm font-semibold opacity-80">Virtual Card</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button onClick={() => setShowBalance(!showBalance)} className="opacity-70 hover:opacity-100 transition-opacity">
+                    {showBalance ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
+                  <button className="opacity-70 hover:opacity-100 transition-opacity">
+                    <Copy size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Balance */}
+              <div>
+                <p className="text-sm opacity-70 mb-1">Virtual Balance</p>
+                <p className="text-4xl font-extrabold tracking-tight">
+                  {showBalance ? "Rs. 45,200" : "Rs. •••••••"}
+                </p>
+              </div>
+
+              {/* Card details */}
+              <div className="flex items-end justify-between">
+                <div>
+                  <p className="text-xs opacity-60 mb-1">Card Number</p>
+                  <p className="text-sm font-medium tracking-widest">9012 •••• •••• 3456</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-xs opacity-60 mb-1">CVV</p>
+                  <p className="text-sm font-medium">{showBalance ? "847" : "•••"}</p>
+                </div>
+              </div>
+
+              {/* Decorative */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary-foreground/5" />
+              <div className="absolute -bottom-8 -left-4 w-28 h-28 rounded-full bg-primary-foreground/5" />
+            </div>
+          )}
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-card rounded-2xl p-8 border border-border">
-          <h3 className="font-bold text-xl mb-5">Quick Actions</h3>
-          <div className="grid grid-cols-4 gap-4">
+        <div className="bg-card rounded-2xl p-6 border border-border flex flex-col">
+          <h3 className="font-bold text-lg mb-5">Quick Actions</h3>
+          <div className="grid grid-cols-2 gap-3 flex-1">
             {quickActions.map((action) => (
               <button
                 key={action.label}
-                className="flex flex-col items-center gap-3 py-4 rounded-xl border border-border text-sm font-medium hover:bg-secondary transition-colors"
+                className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-border hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 transition-all duration-200 group"
               >
-                <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center text-primary-foreground">
-                  <action.Icon size={22} />
+                <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center text-primary-foreground shadow-lg shadow-primary/25 group-hover:scale-105 transition-transform">
+                  <action.Icon size={24} strokeWidth={2} />
                 </div>
-                <span className="text-xs">{action.label}</span>
+                <span className="text-xs font-semibold text-muted-foreground group-hover:text-foreground transition-colors">{action.label}</span>
               </button>
             ))}
           </div>
