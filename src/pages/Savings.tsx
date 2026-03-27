@@ -49,7 +49,7 @@ const Savings = () => {
 
       {/* Summary */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-primary text-primary-foreground rounded-2xl p-6">
+        <div className="gradient-hero text-primary-foreground rounded-2xl p-6">
           <p className="text-sm opacity-80">Total Savings</p>
           <p className="text-3xl font-bold mt-1">Rs. {totalSaved.toLocaleString()}</p>
         </div>
