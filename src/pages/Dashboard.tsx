@@ -23,27 +23,27 @@ const Dashboard = () => {
   return (
     <div className="space-y-6">
       {/* Top row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Wallet Balance */}
-        <div className="gradient-hero text-primary-foreground rounded-2xl p-6">
+        <div className="gradient-hero text-primary-foreground rounded-2xl p-8 flex flex-col justify-between min-h-[200px]">
           <p className="text-sm opacity-80">Wallet Balance</p>
-          <p className="text-4xl font-bold mt-2">Rs. 128,450</p>
+          <p className="text-5xl font-extrabold mt-2">Rs. 128,450</p>
           <p className="text-sm mt-3 opacity-70">**** 4589 • Active</p>
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-card rounded-2xl p-6 border border-border">
-          <h3 className="font-bold text-lg mb-4">Quick Actions</h3>
-          <div className="grid grid-cols-2 gap-3">
+        <div className="bg-card rounded-2xl p-8 border border-border">
+          <h3 className="font-bold text-xl mb-5">Quick Actions</h3>
+          <div className="grid grid-cols-4 gap-4">
             {quickActions.map((action) => (
               <button
                 key={action.label}
-                className="flex flex-col items-center gap-2 px-3 py-4 rounded-xl border border-border text-xs font-medium hover:bg-secondary transition-colors"
+                className="flex flex-col items-center gap-3 py-4 rounded-xl border border-border text-sm font-medium hover:bg-secondary transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center text-primary-foreground">
-                  <action.Icon size={18} />
+                <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center text-primary-foreground">
+                  <action.Icon size={22} />
                 </div>
-                <span>{action.label}</span>
+                <span className="text-xs">{action.label}</span>
               </button>
             ))}
           </div>
@@ -51,7 +51,7 @@ const Dashboard = () => {
       </div>
 
       {/* Stats row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div className="bg-card rounded-2xl p-6 border border-border">
           <p className="text-sm text-muted-foreground">Monthly Spending</p>
           <p className="text-2xl font-bold mt-1">Rs. 42,000</p>
@@ -72,7 +72,7 @@ const Dashboard = () => {
       {/* Bottom row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Transactions */}
-        <div className="bg-card rounded-2xl p-6 border border-border">
+        <div className="bg-card rounded-2xl p-6 border border-border overflow-x-auto">
           <h3 className="font-bold text-lg mb-4">Recent Transactions</h3>
           <table className="w-full text-sm">
             <thead>
@@ -106,7 +106,7 @@ const Dashboard = () => {
                   <span className="font-medium">{goal.name}</span>
                   <span className="text-primary font-semibold">{goal.percent}%</span>
                 </div>
-                <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <div className="h-2.5 bg-muted rounded-full overflow-hidden">
                   <div
                     className="h-full gradient-primary rounded-full transition-all"
                     style={{ width: `${goal.percent}%` }}
